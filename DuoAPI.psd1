@@ -1,15 +1,15 @@
 ﻿@{
 # Script module or binary module file associated with this manifest
-ModuleToProcess = 'Duo.psm1'
+RootModule = 'DuoApi.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.0001'
+ModuleVersion = '2.0'
 
 # ID used to uniquely identify this module
 GUID = 'c43305bd-6cdf-4a38-9b15-79ada42d9b9e'
 
 # Author of this module
-Author = 'Matt Egan'
+Author = 'Matt Egan, Luke Whitelock'
 
 HelpInfoUri  = 'https://github.com/mbegan/Duo-PSModule'
 
@@ -47,7 +47,7 @@ RequiredModules = @()
 #RequiredAssemblies = @('')
 
 # Script files (.ps1) that are run in the caller's environment prior to importing this module
-ScriptsToProcess = @('Duo_org.ps1')
+#ScriptsToProcess = @('Duo_org.ps1')
 
 # Type files (.ps1xml) to be loaded when importing this module
 #TypesToProcess = @('')
@@ -56,10 +56,22 @@ ScriptsToProcess = @('Duo_org.ps1')
 #FormatsToProcess = @('')
 
 # Modules to import as nested modules of the module specified in ModuleToProcess
-NestedModules = @('Duo_org.ps1')
+#NestedModules = @('Duo_org.ps1')
 
 # Functions to export from this module
-FunctionsToExport = 'Duo*'
+FunctionsToExport = 'Invoke-DuoSignedRequest',
+                    'Set-DuoHostname',
+                    'Set-DuoAPIKeys',
+                    'Get-DuoAccounts',
+                    'New-DuoAccount',
+                    'Remove-DuoAccount',
+                    'Get-DuoUsers',
+                    'New-DuoIntegration',
+                    'Get-DuoIntegrations',
+                    'Get-DuoPhones',
+                    'Get-DuoPreAuth',
+                    'Get-DuoAuth'
+
 
 # Cmdlets to export from this module
 CmdletsToExport = ''
@@ -74,7 +86,7 @@ AliasesToExport = ''
 ModuleList = @()
 
 # List of all files packaged with this module
-FileList = @('Duo.psm1','Duo.psd1','Duo_org.ps1')
+#FileList = @('Duo.psm1','Duo.psd1','Duo_org.ps1')
 
 # Private data to pass to the module specified in ModuleToProcess
 PrivateData = ''
